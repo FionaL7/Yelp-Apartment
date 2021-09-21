@@ -39,7 +39,7 @@ module.exports.isAuthor = async(req, res, next) =>{
     const apartment = await Apartment.findById(id);
     if(!apartment.author.equals(req.user._id)){
     req.flash('error', 'You are not authorised');
-    return res.redirect(`/apartments/${id}`)
+    return res.redirect(`/apartments/${apartment._id}`)
     }
     next()
 }
@@ -49,7 +49,7 @@ module.exports.isReviewAuthor = async(req, res, next) =>{
     const review = await Review.findById(reviewId);
     if(!review.author.equals(req.user._id)){
         req.flash('error', 'You are not authorised');
-        return res.redirect(`/apartments/${id}`)
+        return res.redirect(`/apartments/${apartment._id}`)
     }
     next()
 }

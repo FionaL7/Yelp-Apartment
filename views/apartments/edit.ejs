@@ -79,7 +79,16 @@
    Please select a proper option
     </div>
    </div>
+ <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
+     <% apartment.images.forEach(function(img, i){ %>
+<img src="<%=img.thumbnail%>" class="img-thumbnail rounded" alt="" >
+<div class="form-check">
+    <input type="checkbox" name="deleteImages[]" id="image-<%=i%>" value="<%=img.filename%>">
+    <label  for="image-<%=i%>"> Delete?</label>
+</div>
 
+       <%  }) %> 
+ </div>
     <div class="mt-3">
         <button class="btn btn-success py-2 ">Submit</button>
     </div>

@@ -10,6 +10,7 @@ module.exports.apartmentSchema = Joi.object({
     BHK: Joi.string().valid('Studio', '1', '2', '3', 'Penthouse'),
     amenities: Joi.string()
     }).required(),
+    deleteImages: Joi.array(),
 })
 
 module.exports.reviewSchema = Joi.object({
