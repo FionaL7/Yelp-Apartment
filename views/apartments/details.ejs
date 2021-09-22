@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="/stylesheets/stars.css">
 <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col-7">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <% apartment.images.forEach((img, i) =>{ %>
@@ -44,7 +44,7 @@
       
          <% if(currentUser){ %> 
 
-          <div class="col-6">
+          <div class="col-7">
             <h2>Leave a review</h2>
            <form action="/apartments/<%= apartment._id %>/reviews" method="POST">
             <div class="mb-3">
@@ -98,4 +98,15 @@
       <% } %> 
     </div>
        <% } %>   
+       <div class="col-5">
+    
+        <div id='map' style='width: 400px; height: 300px;'></div>
+        
+        </div>
+       </div>
 </div>
+<script>
+  const mapToken = '<%-process.env.MAPBOX_TOKEN %>';
+ const apartment = <%- JSON.stringify(apartment) %>
+  </script>
+  <script src="/javascripts/showMapPage.js"></script>

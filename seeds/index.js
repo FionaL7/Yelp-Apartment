@@ -35,6 +35,13 @@ const generator = async () => {
                  filename : "Yelp-apartment/ocmkakt0syxgktpejy25"
                 }
             ],
+         geometry: {
+                type: "Point",
+                coordinates: [
+                    cities[random1000].longitude,
+                    cities[random1000].latitude,
+                ]
+            },
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus ornare suspendisse.",
         BHK: `${sample(bhk)}`,
         amenities: `${sample(amenities)}`
