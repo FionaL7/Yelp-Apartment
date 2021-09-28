@@ -13,6 +13,7 @@ ImageSchema.virtual('thumbnail').get(function(){
     return this.url.replace('/upload', '/upload/w_300')
 })
 
+const opts = {toJSON: {virtuals: true}}
 
 const apartmentSchema = new Schema({
     title:  String,
@@ -47,7 +48,12 @@ const apartmentSchema = new Schema({
         }
     ]
 
+}, opts)
+
+apartmentSchema.virtual('properties.popUpMarkup').get(function(){
+return `<strong><a href="/apartments/${this._id}">${this.title}</a></strong> <p>$ ${this.price}</p>`
 })
+
 // Delete reviews middleware
 apartmentSchema.post('findOneAndDelete', async function(doc){
     if(doc){

@@ -20,7 +20,7 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const generator = async () => {
     await Apartment.deleteMany({});
-    for(i = 0; i < 50; i++){
+    for(i = 0; i < 300; i++){
         const random1000 = Math.floor(Math.random() * 1000);
         const aptPrice = Math.floor(Math.random() * 900)+ 6;
     

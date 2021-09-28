@@ -21,7 +21,7 @@ router.get('/new',isLoggedIn,  controls.renderCreateForm);
 
 router.route('/:id')
 .get(catchAsync(controls.showPage ))
-.put( isAuthor, isLoggedIn, upload.array('image'), catchAsync(controls.editApt ))
+.put( isAuthor, isLoggedIn, upload.array('image'), validateApartment, catchAsync(controls.editApt ))
 .delete(isAuthor ,isLoggedIn, controls.deleteApt)
 
 router.get('/:id/edit',isAuthor,  isLoggedIn, catchAsync (controls.renderEditForm))
