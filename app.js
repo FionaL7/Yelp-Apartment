@@ -56,7 +56,6 @@ app.use(mongoSanitize({
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
-
     touchAfter: 24 * 60 * 60,       //when we want it to resave
 
 })
@@ -66,12 +65,12 @@ store.on('error', function (e) {
     console.log('SESSION STORE ERROR', e);
 })
 
-
+const secret = process.env.SECRET || 'somesecret'
 
 const sessionConfig = {
     store,
     name: 'session',
-    secret: 'somesecret',
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -175,6 +174,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })     // render the error template
 })
 
-app.listen(3000, () => {
-    console.log('Port 3000')
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`PORT ${port}`)
 })
