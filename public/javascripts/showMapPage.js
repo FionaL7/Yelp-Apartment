@@ -1,7 +1,8 @@
-mapboxgl.accessToken = mapToken;
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZmlvbmFsMjIiLCJhIjoiY2t0dHZnZzQzMWhtZzJvbnEwN3ltZzh5dyJ9.g-g3F7QDBPJaNFbj0B499g";
 const map = new mapboxgl.Map({
   container: "map", // container ID
-  style: "mapbox://styles/mapbox/streets-v11", // style URL
+  style: "mapbox://styles/mapbox/light-v10", // style URL
   center: apartment.geometry.coordinates, // starting position [lng, lat]
   zoom: 8, // starting zoom
 });
