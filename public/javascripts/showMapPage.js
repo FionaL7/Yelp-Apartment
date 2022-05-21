@@ -1,10 +1,9 @@
-
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
-  container: 'map', // container ID
-  style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
+  container: "map", // container ID
+  style: "mapbox://styles/mapbox/streets-v11", // style URL
   center: apartment.geometry.coordinates, // starting position [lng, lat]
-  zoom: 8 // starting zoom
+  zoom: 8, // starting zoom
 });
 
 new mapboxgl.Marker()
